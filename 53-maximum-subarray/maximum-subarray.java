@@ -10,7 +10,7 @@ class Solution {
             if(currSum<0){
                 currSum=0;
             }else {
-                maxSum = (int) (Math.max(currSum, maxSum));
+                // maxSum = (int) (Math.max(currSum, maxSum));
             }
 
         }
