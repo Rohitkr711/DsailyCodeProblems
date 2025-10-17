@@ -9,18 +9,24 @@ class Solution {
         // }
         // return ans;
 
-        int min=prices[0];
-        int ans =0;
-        int profit;
+
+        int ans=0;
+        int profit=0;
+        int minBuyPrice = prices[0];
 
         for(int i=0;i<prices.length;++i){
-            min=Math.min(min,prices[i]);
-            profit = prices[i]-min;
-            ans = Math.max(profit,ans);
+            minBuyPrice = (int)Math.min(minBuyPrice, prices[i]);
+            profit = (int)Math.max(profit,prices[i]-minBuyPrice);
+            ans = (int)Math.max(ans,profit);
 
         }
 
         return ans;
+
+
+
+
+
 
 
 
