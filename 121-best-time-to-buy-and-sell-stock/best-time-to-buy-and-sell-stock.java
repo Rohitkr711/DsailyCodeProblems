@@ -11,13 +11,20 @@ class Solution {
 
 
         int ans=0;
-        int profit=0;
         int minBuyPrice = prices[0];
 
-        for(int i=0;i<prices.length;++i){
-            minBuyPrice = (int)Math.min(minBuyPrice, prices[i]);
-            profit = (int)Math.max(profit,prices[i]-minBuyPrice);
-            ans = (int)Math.max(ans,profit);
+        for(int i=1;i<prices.length;++i){
+
+            if(prices[i]<minBuyPrice){
+                minBuyPrice = prices[i];
+
+            }else{
+                ans = (int)Math.max(ans,prices[i]-minBuyPrice);
+
+            }
+            // minBuyPrice = (int)Math.min(minBuyPrice, prices[i]);
+            // ans = (int)Math.max(ans,prices[i]-minBuyPrice);
+            // ans = (int)Math.max(ans,profit);
 
         }
 
