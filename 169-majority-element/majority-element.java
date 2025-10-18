@@ -35,9 +35,27 @@ class Solution {
 
         // APPROACH-3 (using sort)
 
-        Arrays.sort(nums);
-        int idx = nums.length/2;
-        return nums[idx];
+        // Arrays.sort(nums);
+        // int idx = nums.length/2;
+        // return nums[idx];
+
+        // Approach-4 (Moore voting algo)
+        int count = 1;
+        int currEle = nums[0];
+
+        for (int i = 1; i < nums.length; ++i) {
+            if (currEle != nums[i]) {
+                if (count == 0) {
+                    currEle = nums[i];
+                    count += 1;
+                } else {
+                    --count;
+                }
+            } else {
+                ++count;
+            }
+        }
+        return currEle;
 
     }
 }
