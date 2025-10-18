@@ -15,24 +15,29 @@ class Solution {
         // }
         // return -1;
 
-        // APPROACH-2 (using Map) [TC]
-        int length = nums.length;
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < length; ++i) {
-            if (map.containsKey(nums[i])) {
-                map.put(nums[i], map.get(nums[i]) + 1);
-            } else {
-                map.put(nums[i], 1);
-            }
+        // APPROACH-2 (using Map) [TC->O(n)  & SC->(O(u)->O(n))]
+        // int length = nums.length;
+        // HashMap<Integer, Integer> map = new HashMap<>(); 
+        // for (int i = 0; i < length; ++i) {
+        //     if (map.containsKey(nums[i])) {
+        //         map.put(nums[i], map.get(nums[i]) + 1);
+        //     } else {
+        //         map.put(nums[i], 1);
+        //     }
 
-        }
-        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if(entry.getValue()>length/2)
-            return entry.getKey();
-            // System.out.println("Country: " + entry.getKey() + ", Capital: " + entry.getValue());
-        }
+        // }
+        // for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+        //     if(entry.getValue()>length/2)
+        //     return entry.getKey();
+        // }
 
-        return -1;
+        // return -1;
+
+        // APPROACH-3 (using sort)
+
+        Arrays.sort(nums);
+        int idx = nums.length/2;
+        return nums[idx];
 
     }
 }
